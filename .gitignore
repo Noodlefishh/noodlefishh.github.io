@@ -1,0 +1,36 @@
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dépendances Ruby
+vendor/
+.bundle/
+Gemfile.lock
+
+# Logs et temporaires
+*.log
+*.tmp
+*.swp
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node
+node_modules/
+npm-debug.log
+
+# macOS
+.DS_Store
+.AppleDouble
