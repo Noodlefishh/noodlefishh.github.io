@@ -3,7 +3,6 @@ layout: post
 title:  "Lessons from the Mythos Crisis Cell: Risk, Ownership, and Overreaction in AI Security"
 date:   2026-04-28 13:25:40 -0400
 categories: AI
-tags: AI
 ---
 
 *A personal account from inside the response.*

@@ -1,0 +1,61 @@
+---
+layout: default
+---
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-eyebrow">{{ site.description_short | default: "Personal Blog" }}</div>
+  <h1>{{ site.hero_title | default: site.title }}</h1>
+  <p class="hero-sub">{{ site.description }}</p>
+  <div class="hero-tags">
+    {% for tag in site.featured_tags %}
+      <span class="tag {% if forloop.index > 2 %}tag--purple{% endif %}">{{ tag }}</span>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Featured post (most recent) -->
+{% assign featured = site.posts.first %}
+{% if featured %}
+<section class="featured-post">
+  <div class="featured-inner" style="grid-template-columns: 1fr;">
+    <div class="featured-body">
+      <div>
+        <div class="featured-label">Featured post</div>
+        <div class="featured-title">
+          <a href="{{ featured.url | relative_url }}">{{ featured.title }}</a>
+        </div>
+        <p class="featured-excerpt">{{ featured.excerpt | strip_html | truncate: 160 }}</p>
+      </div>
+      <div class="featured-footer">
+        <span class="featured-date">{{ featured.date | date: "%B %-d, %Y" }}</span>
+        <a class="read-more" href="{{ featured.url | relative_url }}">read →</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- Post list -->
+<section class="posts-section">
+  <div class="section-header">
+    <span class="section-label">// Recent posts</span>
+    <a href="{{ '/archives' | relative_url }}">view all →</a>
+  </div>
+
+  {% assign posts_to_show = site.posts | shift %}
+  {% for post in posts_to_show limit: 6 %}
+  <div class="post-row">
+    <div class="post-row-left">
+      <span class="post-num">0{{ forloop.index }}</span>
+      <a class="post-row-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </div>
+    <div class="post-row-right">
+      {% if post.tags.first %}
+        <span class="tag {% if forloop.index > 3 %}tag--purple{% endif %}">{{ post.tags.first }}</span>
+      {% endif %}
+      <span class="post-row-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    </div>
+  </div>
+  {% endfor %}
+</section>

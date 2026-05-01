@@ -1,0 +1,26 @@
+---
+layout: default
+title: Tags
+---
+
+<div style="max-width:860px;margin:3rem auto;padding:0 2rem;">
+  <div class="section-label" style="margin-bottom:1.5rem;">// Tags</div>
+  {% assign all_tags = site.posts | map: "tags" | flatten | uniq | sort %}
+  {% for tag in all_tags %}
+    <div style="margin-bottom:2rem;">
+      <div style="font-family:'DM Mono',monospace;font-size:13px;color:#c8f464;margin-bottom:0.8rem;">
+        #{{ tag }} <span style="color:#6b6a72;">({{ site.posts | where_exp:"p","p.tags contains tag" | size }})</span>
+      </div>
+      {% for post in site.posts %}
+        {% if post.tags contains tag %}
+        <div class="post-row">
+          <div class="post-row-left">
+            <a class="post-row-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </div>
+          <span class="post-row-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

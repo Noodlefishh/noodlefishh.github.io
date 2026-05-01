@@ -1,36 +1,39 @@
-# Jekyll
+# Jekyll build output
 _site/
-.sass-cache/
 .jekyll-cache/
 .jekyll-metadata
+.sass-cache/
 
-# Dépendances Ruby
-vendor/
+# Bundler
 .bundle/
-Gemfile.lock
+vendor/bundle/
 
-# Logs et temporaires
+# Secrets & environment — never commit these
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.*
+credentials.*
+_config.local.yml
+
+# Logs & temp
 *.log
+log/
+tmp/
 *.tmp
-*.swp
-*~
 
-# Windows
+# OS artifacts
+.DS_Store
 Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+desktop.ini
 
-# Éditeurs
+# Editor artifacts
 .vscode/
 .idea/
-*.sublime-project
-*.sublime-workspace
-
-# Node
-node_modules/
-npm-debug.log
-
-# macOS
-.DS_Store
-.AppleDouble
+*.swp
+*.swo
+*~

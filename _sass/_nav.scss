@@ -1,0 +1,58 @@
+// _sass/_nav.scss
+@use 'variables' as *;
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba($bg, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid $border;
+
+  .nav-inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $gutter;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: $font-mono;
+    font-size: 14px;
+    font-weight: 500;
+    color: $accent;
+    letter-spacing: 0.05em;
+
+    span { color: $muted; }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+
+    a {
+      font-size: 13px;
+      color: $muted;
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+
+      &:hover, &.active { color: $text; }
+    }
+  }
+
+  .nav-rss {
+    font-size: 12px;
+    font-family: $font-mono;
+    font-weight: 500;
+    padding: 6px 16px;
+    background: $accent;
+    color: $bg;
+    border-radius: 4px;
+    transition: opacity 0.2s;
+
+    &:hover { opacity: 0.85; }
+  }
+}

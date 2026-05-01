@@ -1,0 +1,27 @@
+// _sass/_syntax.scss
+// Dark syntax highlighting (compatible with Jekyll rouge highlighter)
+
+.highlight {
+  background: #131318;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 1.5rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  line-height: 1.7;
+
+  .c,  .c1, .cm  { color: #6b6a72; font-style: italic; }  // comments
+  .k,  .kd, .kn  { color: #c8f464; }                       // keywords
+  .s,  .s1, .s2  { color: #a8d8a8; }                       // strings
+  .n,  .nf        { color: #a89af5; }                       // names / functions
+  .nc             { color: #7b6ef6; }                       // class names
+  .mi, .mf        { color: #f4a364; }                       // numbers
+  .o              { color: #e8e6e1; }                       // operators
+  .p              { color: #6b6a72; }                       // punctuation
+  .nb             { color: #c8f464; }                       // built-ins
+  .na             { color: #f4a364; }                       // attributes
+  .nt             { color: #7b6ef6; }                       // tags
+  .err            { color: #ff6b6b; }                       // errors
+}

@@ -1,12 +1,47 @@
 ---
 layout: default
 ---
-<article>
-  <header>
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date: "%d %B %Y" }}</p>
-  </header>
 
+<header class="post-header">
+  <div class="post-eyebrow">
+    <a class="back-link" href="{{ '/' | relative_url }}">← Home</a>
+    <span class="divider">/</span>
+    <span class="section-label">post</span>
+  </div>
+  <h1>{{ page.title }}</h1>
+  <div class="post-meta">
+    <span class="meta-item">{{ page.date | date: "%B %-d, %Y" }}</span>
+    {% if page.read_time %}<span class="meta-item">{{ page.read_time }} min read</span>{% endif %}
+    {% if page.tags.size > 0 %}
+    <div class="meta-tags">
+      {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</header>
+
+<article class="post-body">
   {{ content }}
-
 </article>
+
+{% if page.previous or page.next %}
+<nav class="post-nav">
+  {% if page.previous %}
+  <a class="post-nav-item prev" href="{{ page.previous.url | relative_url }}">
+    <span class="nav-label">← Previous post</span>
+    <span class="nav-title">{{ page.previous.title }}</span>
+  </a>
+  {% else %}
+  <div></div>
+  {% endif %}
+
+  {% if page.next %}
+  <a class="post-nav-item next" href="{{ page.next.url | relative_url }}">
+    <span class="nav-label">Next post →</span>
+    <span class="nav-title">{{ page.next.title }}</span>
+  </a>
+  {% endif %}
+</nav>
+{% endif %}
