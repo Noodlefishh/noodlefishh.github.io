@@ -1,6 +1,4 @@
 // _sass/_base.scss
-@use 'variables' as *;
-@use 'sass:color';
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -39,7 +37,7 @@ img { max-width: 100%; display: block; }
 
   &.tag--purple {
     background: rgba($accent2, 0.1);
-    color: color.adjust($accent2, $lightness: 20%);
+    color: lighten($accent2, 20%);
     border-color: rgba($accent2, 0.25);
   }
 }
