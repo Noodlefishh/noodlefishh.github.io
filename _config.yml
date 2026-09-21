@@ -18,10 +18,9 @@ github_username: Noodlefishh
 # Tags displayed in the hero
 featured_tags:
   - Application Security
+  - Hacking
   - AI
-  - Bug Bounty
-  - open-source
-  - OSINT
+  - OSS
 
 # Jekyll
 permalink: /:year/:month/:day/:title/
